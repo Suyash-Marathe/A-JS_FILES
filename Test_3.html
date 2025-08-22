@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Two-Way Data Binding Example</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js">
+    </script>
+    <style>
+        body {
+            background-color: black;
+            font-size: 20px;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        table {
+            border: 1px solid rgb(255, 255, 255);
+            border-collapse: collapse;
+        }
+
+        tr,
+        th,
+        td {
+            border: 1px solid rgb(255, 255, 255);
+            border-collapse: collapse;
+            padding: 10px;
+        }
+        button {
+            background-color: rgb(0, 0, 0);
+            color: white;
+            padding: 10px;
+            border-style: solid; 
+            border-color: whitesmoke;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body ng-app="myApp">
+    <h1>Two-Way Data Binding Example</h1>
+
+    <h1>Food Ordering System</h1>
+    <table>
+
+
+        <tr>
+            <th>Food Items</th>
+            <th>Price</th>
+            <th>Quantity</th>
+        </tr>
+        <tr>
+            <td>Pizza</td>
+            <td>120</td>
+            <td>
+                <input type="number" ng-model="pizza">
+            </td>
+        </tr>
+        <tr>
+            <td>Pasta</td>
+            <td>160</td>
+            <td>
+                <input type="number" ng-model="pasta">
+            </td>
+        </tr>
+        <tr>
+            <td>Garlic Bread</td>
+            <td>150</td>
+            <td>
+                <input type="number" ng-model="garlicbread">
+            </td>
+        </tr>
+        <tr>
+            <td>Ice Cream</td>
+            <td>250</td>
+            <td>
+                <input type="number" ng-model="icecream">
+            </td>
+        </tr>
+    </table>
+    <br>
+
+<button ng-click="total = (pizza * 120 || 0) + (pasta * 160 || 0) + (garlicbread * 150 || 0) + (icecream * 120 || 0)">Calculate Total</button>
+<br>
+<h2>Total Amount : {{total}}</h2>
+    <script type="text/javascript">
+        var app = angular.module("myApp", []);
+
+
+
+    </script>
+</body>
+
+</html>
