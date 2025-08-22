@@ -1,0 +1,38 @@
+<html>
+
+<head>
+
+    <title>One way data binding</title>
+
+    <script src="ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+    <style>
+        /* body {
+            background-color: black;
+            font-size: 20px;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+        } */
+    </style>
+</head>
+
+<body ng-app="myapp">
+
+    <div ng-controller="myCtrl">
+
+        FirstName : <span ng-bind="firstname"></span><br>
+        LastName : <span ng-bind="lastname"></span><br>
+    </div>
+
+    <script type="text/javascript">
+
+        var app = angular.module("myapp", []);
+        app.controller("myCtrl", function ($scope) {
+            $scope.firstname = "Suyash";
+            $scope.lastname = "Marathe";
+        });
+    </script>
+
+</body>
+
+</html>
