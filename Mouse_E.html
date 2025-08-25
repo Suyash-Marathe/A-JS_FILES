@@ -1,0 +1,49 @@
+<html ng-app="myapp">
+
+<head>
+    <title>NG Repeat</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-size: 20px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        .hover {
+            height: 200px;
+            width: 100%;
+            background-color: grey;
+            font-size: 100px;
+            justify-content: center;
+            display: flex;
+            align-items: center;
+        }
+        h1 {
+            margin-top: 20%;
+                justify-content: center;
+            display: flex;
+            align-items: center;
+        }
+    </style>
+    <script>
+        var app = angular.module("myapp", []);
+        app.controller("myctrl", function ($scope) {
+            $scope.myfunc = function (gfg) {
+                $scope.x = gfg.clientX;
+                $scope.y = gfg.clientY;
+            }
+
+
+        });
+    </script>
+</head>
+
+<body ng-controller="myctrl">
+    <div class="hover" ng-mousemove="myfunc($event)">HOVER HERE !!</div>
+    
+    <h1>Cordinates : {{'X axis = '+ x +' | Y axis = '+ y}}</h1>
+</body>
+
+</html>

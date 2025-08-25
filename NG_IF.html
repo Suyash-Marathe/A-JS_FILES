@@ -1,0 +1,16 @@
+<html>
+    <head>
+        <title>ngIf</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+        <style>
+            body {background-color: black; color: white; font-size: 40px; font-family: monospace}
+        </style>
+    </head>
+    <body ng-app>
+        Enter Year : <input type="number" ng-model="n"><br>
+        <span ng-if="n !== undefined && n!== null && n !==''">
+            <span ng-if="n % 4 == 0">Leap Year</span>
+            <span ng-if="n % 4 !== 0">Not Leap Year</span>
+        </span>
+    </body>
+</html>
