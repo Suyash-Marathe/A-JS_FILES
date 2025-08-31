@@ -1,0 +1,22 @@
+<html ng-app>
+    <head>
+        <title>Login Form</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    </head>
+    <body>
+        <form name="loginform" >
+            <h2>Login Page : </h2>
+            Username: <input type="text" name="uname" ng-model="uname" required minlength="5">
+            <span class="error" ng-show="loginform.uname.$touched && loginform.uname.$error.minlength">
+                Username required atleast 5 characters.
+            </span>
+            <br><br>
+            Password: <input type="password" name="upass" ng-model="upass" required minlength="8">
+            <span class="error" ng-show="loginform.upass.$touched && loginform.upass.$error.minlength">
+                Password required atleast 8 characters.
+            </span>
+            <br><br>
+            <button type="submit" ng-disabled="loginform.$invalid">Login</button>
+        </form>
+    </body>
+</html>

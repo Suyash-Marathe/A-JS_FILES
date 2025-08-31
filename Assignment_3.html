@@ -1,0 +1,25 @@
+<html ng-app="myapp">
+    <head>
+        <title>Subjects List
+        </title>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+        <script>
+            var app = angular.module("myapp", []);
+            app.controller("myctrl", function ($scope, subjectService) {
+                $scope.subjects = subjectService.getSubjects();
+            });
+            app.service("subjectService", function () {
+                this.getSubjects = function () {
+                    return ["AngularJS", "Python", "Java", "DBMS"];
+                }
+            }
+        );
+        </script>
+    </head>
+    <body ng-controller="myctrl">
+        <h2>Subjects :</h2>
+        <ul>
+            <li ng-repeat="subject in subjects">{{subject}}</li>
+        </ul>
+    </body>
+</html>
