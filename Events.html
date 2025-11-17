@@ -1,0 +1,38 @@
+<html ng-app="app">
+
+<head>
+    <title>Events</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+
+<body ng-controller="ctrl">
+    <input type="button" ng-click="cl()">
+    <input type="button" ng-dblclick="dblcl()">
+    <input type="text" ng-keyup="ku()">
+    <input type="text" ng-keydown="kd()">
+    <input type="text" ng-mouseover="mo()">
+
+    <script>
+        var app = angular.module("app", [])
+        app.controller("ctrl", function ($scope) {
+
+            $scope.cl = function () {
+                alert("Clicked");
+            }
+            $scope.dblcl = function () {
+                alert("Double Clicked");
+            }
+            $scope.ku = function () {
+                alert("Key Pressed");
+            }
+            $scope.kd = function () {
+                alert("Released");
+            }
+            $scope.mo = function () {
+                alert("Overed");
+            }
+        })
+    </script>
+</body>
+
+</html>

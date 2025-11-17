@@ -1,0 +1,42 @@
+<html ng-app="app">
+
+<head>
+    <title>Test</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <style>
+        body {
+            background-color: black;
+            color: beige;
+        }
+    </style>
+</head>
+
+<body ng-controller="ctrl">
+
+    <script>
+        var app = angular.module("app", [])
+        app.factory("fct", function () {
+            return {
+                msg: "Factory"
+            }
+        })
+
+        app.service("srvc", function () {
+            this.msg = "Sevice"
+        })
+
+        app.controller("ctrl", function ($scope, fct, srvc) {
+            $scope.fctmsg = fct.msg
+            $scope.srvcmsg = srvc.msg
+
+        })
+    </script>
+
+    Factory = {{fctmsg}}
+    Service = {{srvcmsg}}
+
+
+
+</body>
+
+</html>

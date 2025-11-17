@@ -16,25 +16,25 @@
 
     <script>
         var app = angular.module("app", ['ngroute'])
-        app.config("ctrl", function ($routeProvider) {
+        app.config("ctrl", function($routeProvider) {
             $routeProvider
-                .when("/home", {
-                    template: "This is HomePage.";
-                })
-                .when("/about", {
-                    template: "This is About Page."
-                })
-                .otherwise({
-                    redirectTo: "/home"
-                })
+            .when("/home", {
+                template : "This is HomePage.";
+            })
+            .when("/about", {
+                template : "This is About Page."
+            })
+            .otherwise ({
+                redirectTo: "/home"
+            })
 
         })
     </script>
 
-    <a href="#!home">Home</a>
-    <a href="#!home">About</a>
+<a href = "#!home">Home</a>
+<a href = "#!home">About</a>
 
-    <div ng-view></div>
+<div ng-view></div>
 </body>
 
 </html>

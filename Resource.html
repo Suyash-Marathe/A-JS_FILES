@@ -1,0 +1,37 @@
+<html ng-app="app">
+
+<head>
+    <title>Test</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-resource.js"></script>
+    <style>
+        body {
+            background-color: black;
+            color: beige;
+        }
+    </style>
+</head>
+
+<body ng-controller="ctrl">
+
+    <script>
+        var app = angular.module("app", ['ngResource'])
+        app.factory("User", function ($resource) {
+            return $resource('data.json')
+        })
+
+        app.controller("ctrl", function ($scope, User) {
+            $scope.user = User.get()
+        })
+    </script>
+
+
+
+    Name : {{user.name}}
+    City : {{user.city}}
+
+
+</body>
+
+</html>
